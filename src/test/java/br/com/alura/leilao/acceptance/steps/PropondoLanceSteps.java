@@ -38,13 +38,10 @@ public class PropondoLanceSteps {
         assertEquals(leilao.getLances().get(0).getValor(), lance.getValor());
     }
 
-    @Dado("varios lances")
-    public void varios_lances() {
-        Usuario usuario1 = new Usuario("fulano");
-        lances.add(new Lance(usuario1, BigDecimal.TEN));
-
-        Usuario usuario2 = new Usuario("betrano");
-        lances.add(new Lance(usuario2, BigDecimal.valueOf(15)));
+    @Dado("um lance de {double} reais do usuario {string}")
+    public void um_lance_de_reais_do_usuario(Double value, String name) {
+        Usuario usuario1 = new Usuario(name);
+        lances.add(new Lance(usuario1, BigDecimal.valueOf(value)));
     }
 
     @Quando("propoe varios lances ao leilao")
@@ -55,8 +52,8 @@ public class PropondoLanceSteps {
     @Entao("o maior lance e aceito")
     public void o_maior_lance_e_aceito() {
         assertTrue(leilao.getLances().size() == 2);
-        assertEquals(leilao.getLances().get(0).getValor(), BigDecimal.TEN);
-        assertEquals(leilao.getLances().get(1).getValor(), BigDecimal.valueOf(15));
+        assertEquals(leilao.getLances().get(0).getValor(), BigDecimal.valueOf(10.0));
+        assertEquals(leilao.getLances().get(1).getValor(), BigDecimal.valueOf(15.0));
     }
 
 

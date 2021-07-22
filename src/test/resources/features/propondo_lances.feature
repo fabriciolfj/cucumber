@@ -7,6 +7,7 @@ Cenario: Propondo um unico lance valido
  Entao o lance e aceito
 
 Cenario: Propondo varios lances validos
- Dado varios lances
+ Dado um lance de 10.0 reais do usuario "fulano"
+ E um lance de 15.0 reais do usuario "beltrano"
  Quando propoe varios lances ao leilao
  Entao o maior lance e aceito
