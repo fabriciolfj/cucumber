@@ -38,9 +38,7 @@ public class Lance {
 	public Lance() {}
 	
 	public Lance(Usuario usuario, BigDecimal valor) {
-		if (valor.doubleValue() <= 0) {
-			throw new IllegalArgumentException();
-		}
+		System.out.println("valor recebido: " + valor);
 		this.usuario = usuario;
 		this.valor = valor;
 		this.data = LocalDate.now();
